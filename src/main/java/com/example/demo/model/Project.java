@@ -45,8 +45,12 @@ public class Project {
     @UpdateTimestamp
     private LocalDateTime lastUpdatedDate;
     
+    @Column(name = "Region")
     private String region;
+    
+    @Column(name = "Comments")
     private String comments;
+    
 	public Long getProjectld() {
 		return projectld;
 	}

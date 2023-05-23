@@ -2,16 +2,22 @@ package com.example.demo.controller;
 
 
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.time.LocalDateTime;
 
 import java.util.List;
 import java.util.Optional;
 
-
-
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
-
-
+import org.springframework.core.io.ByteArrayResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,6 +31,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.Project;
 import com.example.demo.repository.ProjectRepository;
+
+import jakarta.annotation.Resource;
 
 
 
@@ -69,6 +77,32 @@ public class ProjectController {
             return ResponseEntity.notFound().build();
         }
     }
+	
+//	@GetMapping("/report")
+//
+//    public void exportToExcel() throws IOException {
+//     {
+//	    List<Project> projects = projectRepository.findAll();
+//
+//	    //create excel workbook and sheet
+//	    Workbook workbook = new XSSFWorkbook();
+//	    Sheet sheet = workbook.createSheet("Projects");
+//
+//	    
+//	    Row headerRow = sheet.createRow(0);
+//	    headerRow.createCell(0).setCellValue("Project ID");
+//	    headerRow.createCell(1).setCellValue("Project Name");
+//	    headerRow.createCell(2).setCellValue("Project Status");
+//	    headerRow.createCell(3).setCellValue("Created By");
+//	    headerRow.createCell(4).setCellValue("Creation Date");
+//	    headerRow.createCell(5).setCellValue("Last Updated By");
+//	    headerRow.createCell(6).setCellValue("Last Updated Date");
+//	    headerRow.createCell(7).setCellValue("Region");
+//	    headerRow.createCell(8).setCellValue("Comments");
+//
+//	    // Populate data rows
+//	    
+//	}
 	
 	
 	   
