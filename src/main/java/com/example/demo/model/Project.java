@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.util.Date;
 
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import jakarta.persistence.Column;
@@ -29,8 +30,9 @@ public class Project {
     @Column(name = "project_status")
     private String projectStatus;
     
-    @GeneratedValue(strategy = GenerationType.AUTO)
+   
     @Column(name = "createdBy")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String createdBy;
     
     @Column(name = "creation_date")
